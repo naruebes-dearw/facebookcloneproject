@@ -1,4 +1,4 @@
-const port = 39421;
+const port = 4040;
 
 export const SERVER_HOME_URL = `http://localhost:${port}/`;
 
