@@ -52,3 +52,6 @@ function App() {
 }
 
 export default App;
+
+console.log("process.env.PORT");
+console.log(process.env.PORT);

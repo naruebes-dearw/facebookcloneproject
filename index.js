@@ -10,7 +10,8 @@ const mongoose = require("mongoose");
 const keys = require("./config/keys");
 const cors = require("cors");
 const path = require("path");
-const port = process.env.PORT || 4040;
+const port = 39421;
+// const port = process.env.PORT || 4040;
 
 const app = express();
 
