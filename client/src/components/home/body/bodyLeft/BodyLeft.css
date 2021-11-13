@@ -1,0 +1,15 @@
+.body-left {
+  flex: 1;
+  padding: 10px;
+  position: relative;
+  /* background-color: blue; */
+}
+
+.body-left::after {
+  content: "";
+  position: absolute;
+  width: 92%;
+  height: 1px;
+  bottom: 0px;
+  background-color: #CCC;
+}

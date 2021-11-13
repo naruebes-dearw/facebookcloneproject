@@ -1,0 +1,33 @@
+.person {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  column-gap: 7px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* background-color: skyblue; */
+}
+
+.person:hover {
+  background-color: var(--background-hover-dark);
+}
+
+.img-container {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  color: #0062E0;
+  object-fit: cover;
+  /* background-color: red; */
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

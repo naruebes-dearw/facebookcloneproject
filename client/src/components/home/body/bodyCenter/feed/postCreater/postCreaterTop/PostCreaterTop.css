@@ -1,0 +1,57 @@
+.post-creater-top {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  column-gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #DDD;
+}
+
+.post-creater-top .img-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  color: #0062E0;
+  object-fit: cover;
+  /* background-color: red; */
+}
+
+.post-creater-top .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.message-form {
+  width: 100%;
+  display: flex;
+  column-gap: 5px;
+}
+
+.message-form input:not(.submit-btn) {
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--background-color-primary);
+}
+
+.message-form input:hover {
+  background-color: var(--background-hover-dark);
+}
+
+.message-form input:nth-child(1) {
+  flex: 1;
+}
+
+.message-form input:nth-child(2) {
+  max-width: 130px;
+}
+
+.message-form .submit-btn {
+  display: none;
+}

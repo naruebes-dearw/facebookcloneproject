@@ -1,0 +1,15 @@
+.option-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  column-gap: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  /* background-color: skyblue; */
+}
+
+.option-btn:hover {
+  background-color: var(--background-hover);
+}

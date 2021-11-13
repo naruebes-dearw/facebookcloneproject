@@ -1,0 +1,27 @@
+.post-title {
+  display: flex;
+  column-gap: 10px;
+  padding: 15px 20px 0 20px;
+  /* background-color: red; */
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  color: var(--color-primary);
+}
+
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title-info p {
+  font-size: 14px;
+  color: #777;
+}

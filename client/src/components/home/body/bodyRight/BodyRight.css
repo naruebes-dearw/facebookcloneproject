@@ -1,0 +1,22 @@
+.body-right {
+  flex: 1;
+  padding: 10px;
+  position: relative;
+  /* background-color: skyblue; */
+}
+
+.body-right::after {
+  content: "";
+  position: absolute;
+  width: 92%;
+  height: 1px;
+  bottom: 0;
+  right: 10px;
+  background-color: #CCC;
+}
+
+.body-right h3 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  padding-left: 5px;
+}

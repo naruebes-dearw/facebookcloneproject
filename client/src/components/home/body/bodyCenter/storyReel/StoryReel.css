@@ -1,0 +1,28 @@
+.story-reel {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+  position: relative;
+  /* background-color: skyblue; */
+}
+
+.other-story {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid #aaa;
+  color: #777;
+  position: absolute;
+  right: -20px;
+  background-color: var(--background-color-primary);
+  cursor: pointer;
+}
+
+.other-story:active {
+  transform: scale(0.95);
+}

@@ -1,0 +1,10 @@
+:root {
+  --color-primary: #1976D2;
+  --color-logo: #666;
+  --background-color-primary: #F0F2F5;
+  --box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  --box-shadow-small: 0 0 5px rgba(0,0,0,0.3);
+  --transition: all 0.3s ease-in-out;
+  --background-hover: #EEE;
+  --background-hover-dark: #DDD;
+}
