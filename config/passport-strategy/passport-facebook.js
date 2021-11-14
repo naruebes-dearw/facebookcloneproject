@@ -2,8 +2,13 @@ const passport = require("passport");
 const FacebookStrategy = require("passport-facebook").Strategy;
 const User = require("../../models/user-model");
 
-const FACEBOOK_APP_ID = "958911274837356";
-const FACEBOOK_APP_SECRET = "8dcc2dea5c2da04a25423122c84efdc5";
+// facebook clone test for local
+// const FACEBOOK_APP_ID = "958911274837356";
+// const FACEBOOK_APP_SECRET = "8dcc2dea5c2da04a25423122c84efdc5";
+
+// facebook clone for production
+const FACEBOOK_APP_ID = "941138186779270";
+const FACEBOOK_APP_SECRET = "f38cd7199c02b51f9d0413a7663e32f3";
 
 passport.use(new FacebookStrategy({
   clientID: FACEBOOK_APP_ID,
