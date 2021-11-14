@@ -1,13 +1,21 @@
-const { Router } = require("express");
-const bcrypt = require("bcrypt");
-const { exists } = require("../models/user-model");
-const User = require("../models/user-model");
+// const { Router } = require("express");
+// const bcrypt = require("bcrypt");
+// const { exists } = require("../models/user-model");
+// const User = require("../models/user-model");
 
-// signup
-Router.post('/signup', async (req, res) => {
-  const signupInfo = req.body;
-  console.log(signupInfo);
-  res.status(200).send(`setup user: success`);
+// // signup
+// Router.post('/signup', async (req, res) => {
+//   const signupInfo = req.body;
+//   console.log(signupInfo);
+//   res.status(200).send(`setup user: success`);
+// });
+
+// module.exports = router;
+
+
+
+
+
 
   // const exists = await User.exists({ username: username });
   // if (exists) {
@@ -27,9 +35,6 @@ Router.post('/signup', async (req, res) => {
 
   //   res.status(200).send(`setup user:${username} success`);
   // });
-});
-
-module.exports = router;
 
 
 // signup

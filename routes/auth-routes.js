@@ -8,8 +8,8 @@ const Post = require("../models/post-model");
 const LOGIN_SUCCESS_PATH = '/auth/login/success';
 const LOGIN_FAILED_PATH = '/auth/login/failed';
 
-const CLIENT_HOME_PAGE_URL = "http://localhost:3000";
-const CLIENT_LOGIN_PAGE_URL = "http://localhost:3000/login";
+// const CLIENT_HOME_PAGE_URL = "http://localhost:3000";
+// const CLIENT_LOGIN_PAGE_URL = "http://localhost:3000/login";
 
 const closeLoginPopup = "<script>window.close();</script>";
 

@@ -20,14 +20,6 @@ mongoose.connect(keys.MONGODB_URI, () => {
   console.log("connected to mongo db");
 });
 
-// Serve static assets if in production
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
-  })
-}
-
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
@@ -75,7 +67,7 @@ const authCheck = (req, res, next) => {
 // if it's already login, send the profile response,
 // otherwise, send a 401 response that the user is not authenticated
 // authCheck before navigating to home page
-app.get("/", authCheck, (req, res) => {
+app.get("/api", authCheck, (req, res) => {
   res.status(200).json({
     authenticated: true,
     message: "user successfully authenticated",
@@ -83,6 +75,14 @@ app.get("/", authCheck, (req, res) => {
     cookies: req.cookies
   });
 });
+
+// Serve static assets if in production
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+  })
+}
 
 // connect react to nodejs express server
 app.listen(port, () => {
