@@ -48,7 +48,7 @@ const Signup = () => {
               onChange={e => setFirstName(e.target.value)}
               value={firstName}
               name="firstName"
-              id="outlined-basic"
+              // id="outlined-basic"
               label="First Name"
               variant="outlined"
               required
@@ -57,7 +57,7 @@ const Signup = () => {
               onChange={e => setLastName(e.target.value)}
               value={lastName}
               name="lastName"
-              id="outlined-basic"
+              // id="outlined-basic"
               label="Last Name"
               variant="outlined"
               required
@@ -66,7 +66,7 @@ const Signup = () => {
               onChange={e => setUsername(e.target.value)}
               value={username}
               name="username"
-              id="outlined-basic"
+              // id="outlined-basic"
               label="Username"
               variant="outlined"
               required
@@ -76,7 +76,7 @@ const Signup = () => {
               value={password}
               type="password"
               name="password"
-              id="outlined-basic"
+              // id="outlined-basic"
               label="New password"
               variant="outlined"
               required
