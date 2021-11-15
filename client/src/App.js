@@ -42,9 +42,9 @@ function App() {
 
           <Route path="/signup" component={Signup} />
 
-          <Route path="/test">
+          {/* <Route path="/test">
             <Test />
-          </Route>
+          </Route> */}
         </Switch>
       </div>
     </Router>
