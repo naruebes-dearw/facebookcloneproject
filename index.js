@@ -5,12 +5,12 @@ const cookieParser = require("cookie-parser"); // parse cookie header
 const passport = require("passport");
 const passportSetup = require("./config/passport-setup");
 const authRoutes = require("./routes/auth-routes");
-// const signupRoute = require("./routes/signup-route");
 const mongoose = require("mongoose");
 const keys = require("./config/keys");
 const cors = require("cors");
 const path = require("path");
-// const port = 39421;
+require("dotenv").config();
+
 const port = process.env.PORT || 4040;
 
 const app = express();
@@ -89,3 +89,6 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}!`);
   console.log(`http://localhost:${port}`);
 });
+
+
+console.log(process.env);
