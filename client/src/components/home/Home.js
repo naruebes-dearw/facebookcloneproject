@@ -11,7 +11,7 @@ import "./Home.css";
 const Home = () => {
   // const [userInfo, dispatch] = useStateValue();
   // const history = useHistory();
-  console.log("code beautify 1");
+  console.log("code beautify 2");
 
   return (
     <div className="home">

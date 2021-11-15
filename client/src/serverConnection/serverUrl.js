@@ -1,6 +1,3 @@
-// const port = 4040;
-// const URL = "`http://localhost:${port}/`";
-
 export const SERVER_HOME_URL = `/api`;
 
 export const SERVER_LOGIN_URL = `/auth/login/local`;

@@ -1,6 +1,6 @@
+import "./Feed.css";
 import { useEffect, useState } from "react";
 import { getPosts } from "../../../../../serverConnection/serverConnection";
-import "./Feed.css";
 import PostCreater from "./postCreater/PostCreater";
 import Posts from "./posts/Posts";
 
