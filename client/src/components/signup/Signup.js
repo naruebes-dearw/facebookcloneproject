@@ -1,6 +1,6 @@
-import { Button, TextField } from "@mui/material"
 import { useState } from "react"
 import { useHistory } from "react-router";
+import { Button, TextField } from "@mui/material"
 import { signup } from "../../serverConnection/serverConnection";
 import "./Signup.css";
 
