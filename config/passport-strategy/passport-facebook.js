@@ -14,7 +14,8 @@ passport.use(new FacebookStrategy({
   clientID: FACEBOOK_APP_ID,
   clientSecret: FACEBOOK_APP_SECRET,
   // callbackURL: "/auth/posts",
-  callbackURL: "/auth/login/facebook/callback",
+  // callbackURL: "/auth/login/facebook/callback",
+  callbackURL: "https://facebookcloneproject.herokuapp.com/auth/login/facebook/callback",
   profileFields: ['id', 'displayName', 'picture.type(large)', 'first_name', 'last_name', 'middle_name']
 },
   async (accessToken, refreshToken, profile, done) => {
