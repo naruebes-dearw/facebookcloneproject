@@ -7,12 +7,12 @@ const User = require("../../models/user-model");
 // const FACEBOOK_APP_SECRET = "8dcc2dea5c2da04a25423122c84efdc5";
 
 // facebook clone for production
-const FACEBOOK_APP_ID = "941138186779270";
-const FACEBOOK_APP_SECRET = "f38cd7199c02b51f9d0413a7663e32f3";
+// const FACEBOOK_APP_ID = "941138186779270";
+// const FACEBOOK_APP_SECRET = "f38cd7199c02b51f9d0413a7663e32f3";
 
 passport.use(new FacebookStrategy({
-  clientID: FACEBOOK_APP_ID,
-  clientSecret: FACEBOOK_APP_SECRET,
+  clientID: process.env.FACEBOOK_APP_ID,
+  clientSecret: process.env.FACEBOOK_APP_SECRET,
   callbackURL: "https://facebookcloneproject.herokuapp.com/auth/login/facebook/callback",
   profileFields: ['id', 'displayName', 'picture.type(large)', 'first_name', 'last_name', 'middle_name']
 },

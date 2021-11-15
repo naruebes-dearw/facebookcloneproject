@@ -16,9 +16,9 @@ const port = process.env.PORT || 4040;
 const app = express();
 
 // connect to mongodb
-mongoose.connect(keys.MONGODB_URI, () => {
-  console.log("connected to mongo db");
-});
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log("Connected to mongoDB. complete env setup"))
+  .catch(err => console.log(err));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(
   cookieSession({
     name: "session",
-    keys: [keys.COOKIE_KEY],
+    keys: [process.env.COOKIE_KEY],
     maxAge: 24 * 60 * 60 * 100
   })
 );
@@ -89,5 +89,3 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}!`);
   console.log(`http://localhost:${port}`);
 });
-
-console.log(process.env);

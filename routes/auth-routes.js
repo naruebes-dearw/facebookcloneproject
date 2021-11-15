@@ -8,11 +8,7 @@ const Post = require("../models/post-model");
 const LOGIN_SUCCESS_PATH = '/auth/login/success';
 const LOGIN_FAILED_PATH = '/auth/login/failed';
 
-// const CLIENT_HOME_PAGE_URL = "http://localhost:3000";
-// const CLIENT_LOGIN_PAGE_URL = "http://localhost:3000/login";
-
 const closeLoginPopup = "<script>window.close();</script>";
-
 
 // when login is successful, retrieve user info
 router.get("/login/success", (req, res) => {
@@ -43,10 +39,6 @@ router.get("/logout", (req, res) => {
   });
   // res.redirect(CLIENT_HOME_PAGE_URL);
 });
-
-
-// guest auth
-// router.get('/login/guest')
 
 // facebook auth
 router.get('/login/facebook',

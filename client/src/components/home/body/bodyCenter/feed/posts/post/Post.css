@@ -15,6 +15,7 @@
   width: 100%;
   max-height: 350px;
   position: relative;
+  object-fit: cover;
 }
 
 .post-option {
