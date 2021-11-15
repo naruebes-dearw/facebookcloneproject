@@ -6,10 +6,10 @@ const passport = require("passport");
 const passportSetup = require("./config/passport-setup");
 const authRoutes = require("./routes/auth-routes");
 const mongoose = require("mongoose");
-const keys = require("./config/keys");
 const cors = require("cors");
 const path = require("path");
 require("dotenv").config();
+// const keys = require("./config/keys");
 
 const port = process.env.PORT || 4040;
 

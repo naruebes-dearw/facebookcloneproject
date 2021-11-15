@@ -1,6 +1,6 @@
 const passport = require("passport");
-const keys = require("./keys");
 const User = require("../models/user-model");
+// const keys = require("./keys");
 
 // passport strategy
 const passportStrategyLocal = require("./passport-strategy/passport-local");
