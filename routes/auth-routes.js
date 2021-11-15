@@ -53,7 +53,7 @@ router.get('/login/facebook',
   passport.authenticate('facebook'));
 
 router.get('/login/facebook/callback',
-  // passport.authenticate('facebook', { failureRedirect: LOGIN_FAILED_PATH }),
+  passport.authenticate('facebook', { failureRedirect: LOGIN_FAILED_PATH }),
   (req, res) => {
     console.log("========= facebook login success ===========")
     res.status(200).send(closeLoginPopup);
