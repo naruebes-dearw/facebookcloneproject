@@ -1,7 +1,7 @@
 import "./PostCreaterTop.css";
 import PersonIcon from '@mui/icons-material/Person';
 import { useStateValue } from "../../../../../../../contextAPI/UserProvider";
-import { getPosts, postMessage } from "../../../../../../../serverConnection/serverConnection";
+import { postMessage } from "../../../../../../../serverConnection/serverConnection";
 import { useState } from "react";
 
 const PostCreaterTop = ({ setPosts }) => {

@@ -1,9 +1,6 @@
 .post-creater-top {
   display: grid;
   grid-template-columns: auto 1fr;
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center; */
   column-gap: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid #DDD;
@@ -18,7 +15,6 @@
   place-items: center;
   color: #0062E0;
   object-fit: cover;
-  /* background-color: red; */
 }
 
 .post-creater-top .img-container img {

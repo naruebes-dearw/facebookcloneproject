@@ -23,7 +23,6 @@ const LoginForm = () => {
         <TextField
           onChange={e => setUsername(e.target.value)}
           name="username"
-          // id="outlined-basic"
           label="username"
           variant="outlined"
           required
@@ -32,7 +31,6 @@ const LoginForm = () => {
           onChange={e => setPassword(e.target.value)}
           type="password"
           name="password"
-          // id="outlined-basic"
           label="password"
           variant="outlined"
           required

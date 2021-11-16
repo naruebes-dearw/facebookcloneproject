@@ -7,7 +7,6 @@
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
-  /* background-color: skyblue; */
 }
 
 .person:hover {
@@ -23,7 +22,6 @@
   place-items: center;
   color: #0062E0;
   object-fit: cover;
-  /* background-color: red; */
 }
 
 .img-container img {

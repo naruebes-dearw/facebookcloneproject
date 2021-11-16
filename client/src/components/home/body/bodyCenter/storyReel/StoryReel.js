@@ -2,11 +2,8 @@ import "./StoryReel.css";
 import Story from "./story/Story";
 import usersExample from "../../bodyCenter/storyReel/usersExample";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-// import { useEffect } from "react";
-
 
 const StoryReel = () => {
-  // const { profileImgUrl, fullName, storyImg } = usersExample[0];
   return (
     <div className="story-reel">
       {
