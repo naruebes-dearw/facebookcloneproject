@@ -9,7 +9,6 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const path = require("path");
 require("dotenv").config();
-// const keys = require("./config/keys");
 
 const port = process.env.PORT || 4040;
 
@@ -42,9 +41,9 @@ app.use(passport.session());
 // set up cors to allow us to accept requests from our client
 app.use(
   cors({
-    origin: "http://localhost:3000", // allow to server to accept request from different origin
+    // origin: "http://localhost:3000", // allow to server to accept request from different origin
+    origin: "https://facebookcloneproject.herokuapp.com", // allow to server to accept request from different origin
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    // allowedHeaders: "Origin, X-Requested-With, Content-Type, Accept, Authorization",
     credentials: true // allow session cookie from browser to pass through
   })
 );
@@ -81,7 +80,7 @@ app.get("/api", authCheck, (req, res) => {
 app.use(express.static("client/build"));
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
-})
+});
 // }
 
 // connect react to nodejs express server
