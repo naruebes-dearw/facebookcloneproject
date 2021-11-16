@@ -5,9 +5,11 @@ const cookieParser = require("cookie-parser"); // parse cookie header
 const passport = require("passport");
 const passportSetup = require("./config/passport-setup");
 const authRoutes = require("./routes/auth-routes");
-const mongoose = require("mongoose");
 const cors = require("cors");
 const path = require("path");
+const mongoose = require("mongoose");
+const Post = require("./models/post-model");
+const User = require("./models/user-model");
 require("dotenv").config();
 
 const port = process.env.PORT || 4040;
@@ -39,18 +41,17 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // set up cors to allow us to accept requests from our client
-// app.use(
-//   cors({
-//     // origin: "http://localhost:3000", // allow to server to accept request from different origin
-//     origin: "https://facebookcloneproject.herokuapp.com", // allow to server to accept request from different origin
-//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-//     credentials: true // allow session cookie from browser to pass through
-//   })
-// );
+app.use(
+  cors({
+    // origin: "http://localhost:3000", // allow to server to accept request from different origin
+    origin: "https://facebookcloneproject.herokuapp.com", // allow to server to accept request from different origin
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true // allow session cookie from browser to pass through
+  })
+);
 
 // set up routes
 app.use("/auth", authRoutes);
-// app.use("/signup", signupRoute);
 
 const authCheck = (req, res, next) => {
   if (!req.user) {
@@ -72,6 +73,34 @@ app.get("/api", authCheck, (req, res) => {
     message: "user successfully authenticated",
     user: req.user,
     cookies: req.cookies
+  });
+});
+
+
+app.get('/users-list', authCheck, (req, res) => {
+  User.find({}, (err, users) => {
+    if (err) return next(err);
+    res.status(200).send(users);
+  })
+})
+
+app.post('/post-message', authCheck, (req, res) => {
+  const newPost = new Post({
+    ownerId: req.body.ownerId,
+    ownerName: req.body.ownerName,
+    ownerProfileImgUrl: req.body.ownerProfileImgUrl,
+    postTime: req.body.postTime,
+    postText: req.body.postText,
+    postImg: req.body.postImg,
+  });
+  newPost.save();
+  res.status(200).send("post-message");
+});
+
+app.get('/posts', authCheck, (req, res) => {
+  Post.find({}, (err, posts) => {
+    if (err) return next(err);
+    res.status(200).send(posts);
   });
 });
 

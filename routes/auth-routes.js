@@ -101,33 +101,5 @@ router.post('/signup', async (req, res) => {
   });
 });
 
-router.get('/users-list', (req, res) => {
-  User.find({}, (err, users) => {
-    if (err) return next(err);
-    res.status(200).send(users);
-  })
-})
-
-router.post('/post-message', (req, res) => {
-  // console.log(req.body);
-  const newPost = new Post({
-    ownerId: req.body.ownerId,
-    ownerName: req.body.ownerName,
-    ownerProfileImgUrl: req.body.ownerProfileImgUrl,
-    postTime: req.body.postTime,
-    postText: req.body.postText,
-    postImg: req.body.postImg,
-  });
-  newPost.save();
-  res.status(200).send("post-message");
-});
-
-router.get('/posts', (req, res) => {
-  Post.find({}, (err, posts) => {
-    // console.log(posts);
-    if (err) return next(err);
-    res.status(200).send(posts);
-  });
-});
 
 module.exports = router;
