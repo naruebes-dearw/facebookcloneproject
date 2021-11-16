@@ -16,7 +16,7 @@ const app = express();
 
 // connect to mongodb
 mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log("Connected to mongoDB. complete env setup"))
+  .then(() => console.log("Connected to mongoDB."))
   .catch(err => console.log(err));
 
 app.use(express.urlencoded({ extended: false }));
@@ -39,14 +39,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // set up cors to allow us to accept requests from our client
-app.use(
-  cors({
-    // origin: "http://localhost:3000", // allow to server to accept request from different origin
-    origin: "https://facebookcloneproject.herokuapp.com", // allow to server to accept request from different origin
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true // allow session cookie from browser to pass through
-  })
-);
+// app.use(
+//   cors({
+//     // origin: "http://localhost:3000", // allow to server to accept request from different origin
+//     origin: "https://facebookcloneproject.herokuapp.com", // allow to server to accept request from different origin
+//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//     credentials: true // allow session cookie from browser to pass through
+//   })
+// );
 
 // set up routes
 app.use("/auth", authRoutes);
