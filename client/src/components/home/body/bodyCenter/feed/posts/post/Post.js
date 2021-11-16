@@ -1,6 +1,5 @@
 import "./Post.css";
 import PostTitle from "./postTitle/PostTitle";
-import PostOption from "./postOption/PostOption";
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import ShareIcon from '@mui/icons-material/Share';
@@ -23,7 +22,7 @@ const Post = (props) => {
       />
       <p className="post-text">{postText}</p>
       <div className="post-img">
-        <img src={postImg} />
+        <img src={postImg} onError={e => e.target.src = ""} />
       </div>
       <div className="post-option">
         <OptionBtn color="grey" Icon={ThumbUpOffAltIcon} title="Like" />
