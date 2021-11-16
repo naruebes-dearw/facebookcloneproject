@@ -14,7 +14,7 @@
 }
 
 .l-left-text {
-  width: 70%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -23,7 +23,7 @@
 }
 
 .l-left-text h1 {
-  font-size: 60px;
+  font-size: 50px;
 }
 
 .l-left-text h1 span {

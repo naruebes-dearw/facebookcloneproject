@@ -19,7 +19,7 @@ const Login = () => {
     <div className="l">
       <div className="l-left">
         <div className="l-left-text">
-          <h1><span>Fake</span>book</h1>
+          <h1>Facebook <span>Clone</span></h1>
           <p>
             Fakebook helps you connect and share with the people in your life.
           </p>
