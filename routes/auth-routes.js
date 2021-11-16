@@ -1,9 +1,7 @@
 const router = require("express").Router();
 const passport = require("passport");
 const bcrypt = require("bcrypt");
-const { exists } = require("../models/user-model");
 const User = require("../models/user-model");
-const Post = require("../models/post-model");
 
 const LOGIN_SUCCESS_PATH = '/auth/login/success';
 const LOGIN_FAILED_PATH = '/auth/login/failed';
@@ -37,7 +35,6 @@ router.get("/logout", (req, res) => {
     success: true,
     message: "logout success."
   });
-  // res.redirect(CLIENT_HOME_PAGE_URL);
 });
 
 // facebook auth
@@ -51,7 +48,6 @@ router.get('/login/facebook/callback',
   });
 
 // google auth
-// router.get('/login/google'), passport.authenticate('google');
 router.get('/login/google',
   passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] }));
 
