@@ -24,6 +24,10 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
+
+          {/* <Route exact path="/">
+            <Home />
+          </Route> */}
           <Route exact path="/">
             {
               userInfo.authenticated ?
@@ -42,9 +46,9 @@ function App() {
 
           <Route path="/signup" component={Signup} />
 
-          {/* <Route path="/test">
+          <Route path="/test">
             <Test />
-          </Route> */}
+          </Route>
         </Switch>
       </div>
     </Router>

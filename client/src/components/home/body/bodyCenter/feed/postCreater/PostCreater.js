@@ -2,11 +2,10 @@ import "./PostCreater.css";
 import PostCreaterBottom from "./postCreaterBottom/PostCreaterBottom";
 import PostCreaterTop from "./postCreaterTop/PostCreaterTop";
 
-const PostCreater = ({ setPosts }) => {
+const PostCreater = ({ children }) => {
   return (
     <div className="post-creater">
-      <PostCreaterTop setPosts={setPosts} />
-
+      <PostCreaterTop />
       <PostCreaterBottom />
     </div>
   )

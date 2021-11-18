@@ -3,8 +3,10 @@ import PersonIcon from '@mui/icons-material/Person';
 import { useStateValue } from "../../../../../../../contextAPI/UserProvider";
 import { postMessage } from "../../../../../../../serverConnection/serverConnection";
 import { useState } from "react";
+import CustomizedDialogs from "../../../../../../CustomizedDialogs/CustomizedDialogs";
+import CreatePostPopup from "../../../../../../createPostPopup/CreatePostPopup";
 
-const PostCreaterTop = ({ setPosts }) => {
+const PostCreaterTop = ({ children }) => {
   const [userInfo, dispatch] = useStateValue();
   const { _id, profileImgUrl, firstName, lastName } = userInfo.data;
   const fullName = `${firstName} ${lastName}`;
@@ -22,7 +24,7 @@ const PostCreaterTop = ({ setPosts }) => {
       postText: postText,
       postImg: postImg,
     }
-    postMessage(posterInfo, setPosts);
+    // postMessage(posterInfo, setPosts);
 
     setPostText("");
     setPostImg("");
@@ -36,24 +38,28 @@ const PostCreaterTop = ({ setPosts }) => {
         }
       </div>
 
-      <form onSubmit={handleSubmit} className="message-form">
+      <CustomizedDialogs title="Create Post">
+        <CreatePostPopup />
+      </CustomizedDialogs>
+
+      {/* <form onSubmit={handleSubmit} className="message-form">
         <input
           value={postText}
           onChange={(e) => setPostText(e.target.value)}
           type="text"
           name="message"
           placeholder={`What's on your mind, ${firstName}?`}
-        />
-        <input
+        /> */}
+      {/* <input
           value={postImg}
           onChange={(e) => setPostImg(e.target.value)}
           type="text"
           name="imageUrl"
           placeholder="Enter Image URL"
-        />
-        <input type="submit" className="submit-btn" />
-      </form>
-    </div>
+        /> */}
+      {/* <input type="submit" className="submit-btn" /> */}
+      {/* </form> */}
+    </div >
   )
 }
 

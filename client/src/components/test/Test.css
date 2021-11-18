@@ -1,0 +1,14 @@
+.test {
+  position: relative;
+}
+
+.textarea-wrapper {
+  width: 200px;
+  background-color: skyblue;
+}
+
+.textarea-wrapper textarea {
+  width: 100%;
+  overflow:hidden;
+  resize: none;
+}
