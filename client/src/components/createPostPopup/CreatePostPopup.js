@@ -45,8 +45,11 @@ const CreatePostPopup = () => {
         </div>
 
         <div className="title-info">
-          <h4>{fullName === " " ? "Full Name" : fullName}</h4>
-          <PublicIcon sx={{ fontSize: "large", color: "#777" }} />
+          <h4>{fullName === " " ? "Full Name afsdfasdfasdfasdf" : fullName}</h4>
+          <div className="public-icon-container">
+            <PublicIcon style={{ fontSize: "14" }} />
+            <p style={{ color: "black" }}>Public</p>
+          </div>
         </div>
       </div>
 
