@@ -4,9 +4,11 @@ import { useStateValue } from "../../../../../../../contextAPI/UserProvider";
 import { postMessage } from "../../../../../../../serverConnection/serverConnection";
 import { useState } from "react";
 import CustomizedDialogs from "../../../../../../CustomizedDialogs/CustomizedDialogs";
-import CreatePostPopup from "../../../../../../createPostPopup/CreatePostPopup";
+import CreatePostPopup from "./createPostPopup/CreatePostPopup";
+import { useCreatePostValue } from "../../../../../../../contextAPI/CreatePostProvider";
 
 const PostCreaterTop = ({ children }) => {
+  const [openCreatePost, setOpenCreatePost] = useCreatePostValue();
   const [userInfo, dispatch] = useStateValue();
   const { _id, profileImgUrl, firstName, lastName } = userInfo.data;
   const fullName = `${firstName} ${lastName}`;
@@ -38,7 +40,15 @@ const PostCreaterTop = ({ children }) => {
         }
       </div>
 
-      <CustomizedDialogs title="Create Post">
+      <button
+        className="modal-btn"
+        variant="outlined"
+        onClick={() => setOpenCreatePost(true)}
+      >
+        <p className="input-placeholder">What's on your mind, {firstName || "Naruebes"}?</p>
+      </button>
+
+      <CustomizedDialogs title="Create Post" useValue={useCreatePostValue}>
         <CreatePostPopup />
       </CustomizedDialogs>
 

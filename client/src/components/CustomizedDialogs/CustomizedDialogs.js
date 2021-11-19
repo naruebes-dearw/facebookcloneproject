@@ -12,6 +12,7 @@ import Typography from '@mui/material/Typography';
 import './CustomizedDialogs.css';
 import { useCreatePostValue } from '../../contextAPI/CreatePostProvider';
 import { textAlign } from '@mui/system';
+import { useEditPostValue } from '../../contextAPI/EditPostProvider';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -51,8 +52,8 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-export default function CustomizedDialogs({ children, title }) {
-  const [open, setOpen] = useCreatePostValue();
+export default function CustomizedDialogs({ children, title, useValue }) {
+  const [open, setOpen] = useValue();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -63,17 +64,17 @@ export default function CustomizedDialogs({ children, title }) {
 
   return (
     <div className="custom-dialog">
-      <Button
+      {/* <Button
         className="modal-btn"
         variant="outlined"
         onClick={handleClickOpen}
       >
         <p className="input-placeholder">What's on your mind, Naruebes?</p>
-      </Button>
+      </Button> */}
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
-        open={open}
+        open={open.status || open}
       >
         <BootstrapDialogTitle
           id="customized-dialog-title"

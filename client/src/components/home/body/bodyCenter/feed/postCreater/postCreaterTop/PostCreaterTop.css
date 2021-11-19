@@ -51,3 +51,27 @@
 .message-form .submit-btn {
   display: none;
 }
+
+
+
+.post-creater-top .modal-btn {
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--background-color-primary);
+  cursor: text;
+}
+
+.post-creater-top .modal-btn:hover {
+  background-color: var(--background-hover-dark);
+  border: none;
+}
+
+.post-creater-top .modal-btn .input-placeholder {
+  width: 100%;
+  font-size: 16px;
+  padding-left: 20px;
+  text-align: left;
+  color: var(--color-grey);
+  text-transform: none;
+}

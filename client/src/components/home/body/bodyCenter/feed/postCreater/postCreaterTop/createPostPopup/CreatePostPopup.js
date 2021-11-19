@@ -3,10 +3,10 @@ import CloseIcon from '@mui/icons-material/Close';
 import PublicIcon from '@mui/icons-material/Public';
 import PersonIcon from '@mui/icons-material/Person';
 import { useState } from "react";
-import { useStateValue } from "../../contextAPI/UserProvider";
-import { postMessage } from "../../serverConnection/serverConnection";
-import { useCreatePostValue } from "../../contextAPI/CreatePostProvider";
-import { usePostMessageValue } from "../../contextAPI/PostMessageProvider";
+import { useStateValue } from "../../../../../../../../contextAPI/UserProvider";
+import { postMessage } from "../../../../../../../../serverConnection/serverConnection";
+import { useCreatePostValue } from "../../../../../../../../contextAPI/CreatePostProvider";
+import { usePostMessageValue } from "../../../../../../../../contextAPI/PostMessageProvider";
 
 const CreatePostPopup = () => {
   const [posts, setPosts] = usePostMessageValue();

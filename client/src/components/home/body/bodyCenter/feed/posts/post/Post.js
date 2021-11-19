@@ -4,9 +4,18 @@ import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import ShareIcon from '@mui/icons-material/Share';
 import OptionBtn from "./optionBtn/OptionBtn";
+import EditIcon from '@mui/icons-material/Edit';
+import CustomizedDialogs from "../../../../../../CustomizedDialogs/CustomizedDialogs";
+import EditPostPopup from "./editPostPopup/EditPostPopup";
+import { useCreatePostValue } from "../../../../../../../contextAPI/CreatePostProvider";
+import { useEditPostValue } from "../../../../../../../contextAPI/EditPostProvider";
 
 const Post = (props) => {
+  // const [openCreatePost, setOpenCreatePost] = useCreatePostValue();
+  const [openEditPost, setOpenEditPost] = useEditPostValue();
   const {
+    ownerId,
+    matchUserId,
     profileImgUrl,
     fullName,
     postTime,
@@ -29,6 +38,24 @@ const Post = (props) => {
         <OptionBtn color="grey" Icon={ChatBubbleOutlineIcon} title="Comment" />
         <OptionBtn color="grey" Icon={ShareIcon} title="Share" />
       </div>
+
+      {
+        matchUserId && <button onClick={() => {
+          setOpenEditPost({
+            status: true,
+            data: {
+              profileImgUrl,
+              fullName,
+              postTime,
+              postText,
+              postImg
+            }
+          })
+        }}>
+          <EditIcon />
+        </button>
+      }
+
     </div>
   )
 }
