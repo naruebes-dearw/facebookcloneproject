@@ -10,10 +10,12 @@ import CustomizedDialogs from "../../../../../../CustomizedDialogs/CustomizedDia
 import EditPostPopup from "./editPostPopup/EditPostPopup";
 import { useCreatePostValue } from "../../../../../../../contextAPI/CreatePostProvider";
 import { useEditPostValue } from "../../../../../../../contextAPI/EditPostProvider";
+import { useDeletePostValue } from "../../../../../../../contextAPI/DeletePostProvider";
 
 const Post = (props) => {
   // const [openCreatePost, setOpenCreatePost] = useCreatePostValue();
   const [openEditPost, setOpenEditPost] = useEditPostValue();
+  const [openDeletePost, setOpenDeletePost] = useDeletePostValue();
   const {
     postId,
     ownerId,
@@ -65,7 +67,17 @@ const Post = (props) => {
           <button
             className="post-action"
             onClick={() => {
-              alert('delete post')
+              setOpenDeletePost({
+                status: true,
+                data: {
+                  postId,
+                  profileImgUrl,
+                  fullName,
+                  postTime,
+                  postText,
+                  postImg
+                }
+              })
             }}
           >
             <DeleteIcon fontSize="small" />

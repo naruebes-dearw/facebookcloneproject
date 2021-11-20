@@ -10,6 +10,8 @@ import { usePostMessageValue } from "../../../../../contextAPI/PostMessageProvid
 import CustomizedDialogs from "../../../../CustomizedDialogs/CustomizedDialogs";
 import EditPostPopup from "./posts/post/editPostPopup/EditPostPopup";
 import { EditPostProvider, useEditPostValue } from "../../../../../contextAPI/EditPostProvider";
+import DeletePostPopup from "./posts/post/deletePostPopup/DeletePostPopup";
+import { DeletePostProvider, useDeletePostValue } from "../../../../../contextAPI/DeletePostProvider";
 
 
 const Feed = () => {
@@ -26,10 +28,17 @@ const Feed = () => {
       </CreatePostProvider>
 
       <EditPostProvider>
-        <CustomizedDialogs title="Edit Post" useValue={useEditPostValue}>
-          <EditPostPopup />
-        </CustomizedDialogs>
-        <Posts posts={posts} />
+        <DeletePostProvider>
+          <CustomizedDialogs title="Edit Post" useValue={useEditPostValue}>
+            <EditPostPopup />
+          </CustomizedDialogs>
+
+          <CustomizedDialogs title="Delete Post" useValue={useDeletePostValue}>
+            <DeletePostPopup />
+          </CustomizedDialogs>
+
+          <Posts posts={posts} />
+        </DeletePostProvider>
       </EditPostProvider>
     </div>
   )

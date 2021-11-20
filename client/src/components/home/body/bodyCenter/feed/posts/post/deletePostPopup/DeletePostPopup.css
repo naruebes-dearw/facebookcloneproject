@@ -1,0 +1,29 @@
+.edit-post {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+}
+
+.edit-post .btns {
+  text-align: right;
+}
+
+.edit-post .btn {
+  font-weight: 600;
+  color: #FFF;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: var(--color-primary);
+}
+
+.edit-post .btn:active {
+  transform: scale(0.99);
+}
+
+.edit-post .cancle-btn {
+  color: var(--color-primary);
+  background-color: transparent;
+}

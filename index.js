@@ -111,6 +111,14 @@ app.put('/edit-post', authCheck, (req, res) => {
   res.status(200).send('put-message');
 })
 
+app.delete('/delete-post/:id', authCheck, (req, res) => {
+  const { id } = req.params;
+  Post.findByIdAndDelete(id, (err) => {
+    if (err) return next(err);
+  })
+  res.status(200).send('delete-message');
+})
+
 app.get('/posts', authCheck, (req, res) => {
   Post.find({}, (err, posts) => {
     if (err) return next(err);

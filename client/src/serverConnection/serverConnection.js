@@ -109,14 +109,14 @@ export const postMessage = (posterInfo, setPosts) => {
 // edit post
 export const editPost = (posterInfo, setPosts) => {
   axios.put(SERVER_EDIT_POST, posterInfo, { withCredentials: true })
-    // .then(res => console.log(res))
     .then(res => getPosts(setPosts))
     .catch(err => console.log(err));
 }
 
 // delete post
-export const deletePost = (posterInfo, setPosts) => {
-  axios.delete(SERVER_DELETE_POST, posterInfo, { withCredentials: true })
+export const deletePost = (postId, setPosts) => {
+  const URL = `${SERVER_DELETE_POST}/${postId}`;
+  axios.delete(URL, { withCredentials: true })
     .then(res => getPosts(setPosts))
     .catch(err => console.log(err));
 }
