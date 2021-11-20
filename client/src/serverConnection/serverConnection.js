@@ -1,4 +1,5 @@
 import axios from "axios";
+import { get } from "mongoose";
 import {
   SERVER_HOME_URL,
   SERVER_LOGIN_URL,
@@ -6,7 +7,9 @@ import {
   SERVER_POST_MESSAGE,
   SERVER_SIGNUP_URL,
   SERVER_USERS_LIST,
-  SERVER_GET_POSTS
+  SERVER_GET_POSTS,
+  SERVER_DELETE_POST,
+  SERVER_EDIT_POST
 } from "./serverUrl";
 
 // get user hompage
@@ -99,6 +102,21 @@ export const usersList = async (setUsers) => {
 // post message
 export const postMessage = (posterInfo, setPosts) => {
   axios.post(SERVER_POST_MESSAGE, posterInfo, { withCredentials: true })
+    .then(res => getPosts(setPosts))
+    .catch(err => console.log(err));
+}
+
+// edit post
+export const editPost = (posterInfo, setPosts) => {
+  axios.put(SERVER_EDIT_POST, posterInfo, { withCredentials: true })
+    // .then(res => console.log(res))
+    .then(res => getPosts(setPosts))
+    .catch(err => console.log(err));
+}
+
+// delete post
+export const deletePost = (posterInfo, setPosts) => {
+  axios.delete(SERVER_DELETE_POST, posterInfo, { withCredentials: true })
     .then(res => getPosts(setPosts))
     .catch(err => console.log(err));
 }

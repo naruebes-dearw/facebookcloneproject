@@ -5,7 +5,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import { useEffect, useState } from "react";
 import { usePostMessageValue } from "../../../../../../../../contextAPI/PostMessageProvider";
 import { useStateValue } from "../../../../../../../../contextAPI/UserProvider";
-import { postMessage } from "../../../../../../../../serverConnection/serverConnection";
+import { editPost, postMessage } from "../../../../../../../../serverConnection/serverConnection";
 import { useCreatePostValue } from "../../../../../../../../contextAPI/CreatePostProvider";
 import { useEditPostValue } from "../../../../../../../../contextAPI/EditPostProvider";
 
@@ -26,6 +26,7 @@ const EditPostPopup = () => {
 
   const createPost = async (e) => {
     const posterInfo = {
+      postId: openEditPost.data.postId,
       ownerId: _id,
       ownerName: fullName,
       ownerProfileImgUrl: profileImgUrl,
@@ -33,7 +34,7 @@ const EditPostPopup = () => {
       postText: postText,
       postImg: postImg,
     }
-    // postMessage(posterInfo, setPosts);
+    editPost(posterInfo, setPosts);
 
     setPostText("");
     setPostImg("");

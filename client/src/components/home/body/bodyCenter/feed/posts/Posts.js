@@ -22,6 +22,7 @@ const Posts = ({ posts }) => {
           return (
             <Post
               key={postId}
+              postId={postId}
               ownerId={ownerId}
               matchUserId={userId === ownerId ? true : false}
               profileImgUrl={ownerProfileImgUrl}

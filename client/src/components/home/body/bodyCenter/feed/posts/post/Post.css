@@ -21,3 +21,22 @@
   display: flex;
   padding: 5px 15px;
 }
+
+.post-action-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.post-action {
+  border: none;
+  color: var(--color-grey);
+  background-color: transparent;
+  cursor: pointer;
+}
+.post-action:hover {
+  color: #333;
+}
+.post-action:nth-child(1) {
+  margin-right: 10px;
+}

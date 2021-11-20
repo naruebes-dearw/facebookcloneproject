@@ -43,8 +43,8 @@ app.use(passport.session());
 // set up cors to allow us to accept requests from our client
 app.use(
   cors({
-    // origin: "http://localhost:3000", // allow to server to accept request from different origin
-    origin: "https://facebookcloneproject.herokuapp.com", // allow to server to accept request from different origin
+    origin: (process.env.NODE_ENV === "production") && "http://localhost:3000",
+    // origin: "https://facebookcloneproject.herokuapp.com", // allow to server to accept request from different origin
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true // allow session cookie from browser to pass through
   })
@@ -96,6 +96,20 @@ app.post('/post-message', authCheck, (req, res) => {
   newPost.save();
   res.status(200).send("post-message");
 });
+
+app.put('/edit-post', authCheck, (req, res) => {
+  Post.findOneAndUpdate({ _id: req.body.postId }, {
+    ownerId: req.body.ownerId,
+    ownerName: req.body.ownerName,
+    ownerProfileImgUrl: req.body.ownerProfileImgUrl,
+    postTime: req.body.postTime,
+    postText: req.body.postText,
+    postImg: req.body.postImg,
+  }, (err, post) => {
+    if (err) return next(err);
+  });
+  res.status(200).send('put-message');
+})
 
 app.get('/posts', authCheck, (req, res) => {
   Post.find({}, (err, posts) => {

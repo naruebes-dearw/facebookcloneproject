@@ -5,6 +5,7 @@ import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import ShareIcon from '@mui/icons-material/Share';
 import OptionBtn from "./optionBtn/OptionBtn";
 import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 import CustomizedDialogs from "../../../../../../CustomizedDialogs/CustomizedDialogs";
 import EditPostPopup from "./editPostPopup/EditPostPopup";
 import { useCreatePostValue } from "../../../../../../../contextAPI/CreatePostProvider";
@@ -14,6 +15,7 @@ const Post = (props) => {
   // const [openCreatePost, setOpenCreatePost] = useCreatePostValue();
   const [openEditPost, setOpenEditPost] = useEditPostValue();
   const {
+    postId,
     ownerId,
     matchUserId,
     profileImgUrl,
@@ -40,20 +42,35 @@ const Post = (props) => {
       </div>
 
       {
-        matchUserId && <button onClick={() => {
-          setOpenEditPost({
-            status: true,
-            data: {
-              profileImgUrl,
-              fullName,
-              postTime,
-              postText,
-              postImg
-            }
-          })
-        }}>
-          <EditIcon />
-        </button>
+        matchUserId &&
+        <div className="post-action-wrapper">
+          <button
+            className="post-action"
+            onClick={() => {
+              setOpenEditPost({
+                status: true,
+                data: {
+                  postId,
+                  profileImgUrl,
+                  fullName,
+                  postTime,
+                  postText,
+                  postImg
+                }
+              })
+            }}
+          >
+            <EditIcon fontSize="small" />
+          </button>
+          <button
+            className="post-action"
+            onClick={() => {
+              alert('delete post')
+            }}
+          >
+            <DeleteIcon fontSize="small" />
+          </button>
+        </div>
       }
 
     </div>
