@@ -1,5 +1,5 @@
-// const origin = "";
-const origin = "http://localhost:5000";
+const origin = "";
+// const origin = "http://localhost:5000";
 
 export const SERVER_HOME_URL = `${origin}/api`;
 export const SERVER_LOGIN_URL = `${origin}/auth/login/local`;
