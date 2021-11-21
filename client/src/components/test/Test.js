@@ -9,6 +9,7 @@ import { CreatePostProvider } from "../../contextAPI/CreatePostProvider";
 import CreatePostPopup from "../home/body/bodyCenter/feed/postCreater/postCreaterTop/createPostPopup/CreatePostPopup";
 
 const Test = () => {
+  const testParams = 1234;
   const [userInfo, dispatch] = useStateValue();
 
   useEffect(() => {
