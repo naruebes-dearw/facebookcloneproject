@@ -52,7 +52,7 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-export default function CustomizedDialogs({ children, title, useValue }) {
+export default function CustomizedDialogs({ children, title, useValue, openBtn }) {
   const [open, setOpen] = useValue();
 
   const handleClickOpen = () => {
@@ -71,6 +71,7 @@ export default function CustomizedDialogs({ children, title, useValue }) {
       >
         <p className="input-placeholder">What's on your mind, Naruebes?</p>
       </Button> */}
+      {openBtn}
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"

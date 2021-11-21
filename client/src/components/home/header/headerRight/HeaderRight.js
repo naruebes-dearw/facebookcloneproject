@@ -7,6 +7,7 @@ import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import LogoutIcon from '@mui/icons-material/Logout';
 import PersonIcon from '@mui/icons-material/Person';
+import ProfileSetting from "./profileSetting/ProfileSetting";
 
 const HeaderRight = () => {
   const history = useHistory();
@@ -21,14 +22,18 @@ const HeaderRight = () => {
 
   return (
     <div className="header-right">
-      <div className="profile-info">
-        {
-          (profileImgUrl && <img src={profileImgUrl} />) ||
-          <PersonIcon />
-        }
 
-        <p>{userInfo.data.firstName}</p>
-      </div>
+      <ProfileSetting>
+        <div className="profile-info">
+          {
+            (profileImgUrl && <img src={profileImgUrl} />) ||
+            <PersonIcon />
+          }
+
+          <p>{userInfo.data.firstName}</p>
+        </div>
+      </ProfileSetting>
+
       <button>
         <AppsIcon />
       </button>

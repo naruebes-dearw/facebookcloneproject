@@ -22,15 +22,6 @@ const DeletePostPopup = () => {
   const [postImg, setPostImg] = useState("");
 
   const createPost = async (e) => {
-    // const posterInfo = {
-    //   postId: openDeletePost.data.postId,
-    //   ownerId: _id,
-    //   ownerName: fullName,
-    //   ownerProfileImgUrl: profileImgUrl,
-    //   postTime: new Date().toString(),
-    //   postText: postText,
-    //   postImg: postImg,
-    // }
     const { postId } = openDeletePost.data;
     deletePost(postId, setPosts);
 

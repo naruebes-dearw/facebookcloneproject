@@ -25,9 +25,6 @@ function App() {
       <div className="app">
         <Switch>
 
-          {/* <Route exact path="/">
-            <Home />
-          </Route> */}
           <Route exact path="/">
             {
               userInfo.authenticated ?

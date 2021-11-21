@@ -2,12 +2,14 @@ import "./BodyRight.css";
 import Person from "./person/Person";
 import { usersList } from "../../../../serverConnection/serverConnection";
 import { useEffect, useState } from "react";
+import { useStateValue } from "../../../../contextAPI/UserProvider";
 
 const BodyRight = () => {
+  const [userInfo, dispatch] = useStateValue();
   const [users, setUsers] = useState([]);
   useEffect(() => {
     usersList(setUsers);
-  }, [])
+  }, [userInfo])
 
   return (
     <div className="body-right">

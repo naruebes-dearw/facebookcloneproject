@@ -1,5 +1,5 @@
-const origin = "";
-// const origin = "http://localhost:5000";
+const localServer = "http://localhost:5000";
+const origin = process.env.NODE_ENV === "production" ? "" : localServer;
 
 export const SERVER_HOME_URL = `${origin}/api`;
 export const SERVER_LOGIN_URL = `${origin}/auth/login/local`;
@@ -12,3 +12,5 @@ export const SERVER_POST_MESSAGE = `${origin}/post-message`;
 export const SERVER_EDIT_POST = `${origin}/edit-post`;
 export const SERVER_DELETE_POST = `${origin}/delete-post`;
 export const SERVER_GET_POSTS = `${origin}/posts`;
+export const SERVER_EDIT_PROFILE = `${origin}/edit-profile`;
+export const SERVER_DELETE_PROFILE = `${origin}/delete-profile`;

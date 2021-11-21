@@ -40,15 +40,15 @@ app.use(passport.initialize());
 // deserialize cookie from the browser
 app.use(passport.session());
 
-// set up cors to allow us to accept requests from our client
-// app.use(
-//   cors({
-//     origin: (process.env.NODE_ENV === "production") && "http://localhost:3000",
-//     // origin: "https://facebookcloneproject.herokuapp.com", // allow to server to accept request from different origin
-//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-//     credentials: true // allow session cookie from browser to pass through
-//   })
-// );
+if (process.env.NODE_ENV === "development") {
+  app.use(
+    cors({
+      origin: "http://localhost:3000", // allow to server to accept request from different origin
+      methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+      credentials: true // allow session cookie from browser to pass through
+    })
+  );
+}
 
 // set up routes
 app.use("/auth", authRoutes);
@@ -116,7 +116,7 @@ app.delete('/delete-post/:id', authCheck, (req, res) => {
   Post.findByIdAndDelete(id, (err) => {
     if (err) return next(err);
   })
-  res.status(200).send('delete-message');
+  res.status(200).send('delete message success');
 })
 
 app.get('/posts', authCheck, (req, res) => {
@@ -125,6 +125,25 @@ app.get('/posts', authCheck, (req, res) => {
     res.status(200).send(posts);
   });
 });
+
+app.delete('/delete-profile/:id', authCheck, (req, res) => {
+  const { id } = req.params;
+  User.findByIdAndDelete(id, (err) => {
+    if (err) return next(err);
+  })
+  res.status(200).send('delete profile success');
+})
+
+app.put('/edit-profile', authCheck, (req, res) => {
+  User.findOneAndUpdate({ _id: req.body.userId }, {
+    firstName: req.body.editFirstName,
+    lastName: req.body.editLastName,
+    profileImgUrl: req.body.editImgUrl,
+  }, (err, user) => {
+    if (err) return next(err);
+  });
+  res.status(200).send('edit profile success');
+})
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {

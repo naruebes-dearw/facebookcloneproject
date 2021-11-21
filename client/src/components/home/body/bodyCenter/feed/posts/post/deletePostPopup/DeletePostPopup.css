@@ -16,7 +16,8 @@
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
-  background-color: var(--color-primary);
+  /* background-color: var(--color-primary); */
+  background-color: red;
 }
 
 .edit-post .btn:active {
@@ -24,6 +25,7 @@
 }
 
 .edit-post .cancle-btn {
-  color: var(--color-primary);
+  color: black;
+  /* color: var(--color-primary); */
   background-color: transparent;
 }

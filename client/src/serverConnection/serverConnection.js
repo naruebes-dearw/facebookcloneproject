@@ -9,7 +9,9 @@ import {
   SERVER_USERS_LIST,
   SERVER_GET_POSTS,
   SERVER_DELETE_POST,
-  SERVER_EDIT_POST
+  SERVER_EDIT_POST,
+  SERVER_DELETE_PROFILE,
+  SERVER_EDIT_PROFILE
 } from "./serverUrl";
 
 // get user hompage
@@ -126,4 +128,20 @@ export const getPosts = async (setPosts) => {
   await axios.get(SERVER_GET_POSTS, { withCredentials: true })
     .then(({ data }) => setPosts(data))
     .catch(err => console.log(err));
+}
+
+// edit profile
+export const editProfile = (newProfile, dispatch) => {
+  axios.put(SERVER_EDIT_PROFILE, newProfile, { withCredentials: true })
+    .then(res => getUser(dispatch))
+    .catch(err => console.log(err));
+}
+
+// delete profile
+export const deleteProfile = (userId) => {
+  const URL = `${SERVER_DELETE_PROFILE}/${userId}`;
+  axios.delete(URL, { withCredentials: true })
+    // .then(res => console.log(res))
+    .catch(err => console.log(err));
+  window.location = '/';
 }

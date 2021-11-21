@@ -6,6 +6,8 @@ import ShareIcon from '@mui/icons-material/Share';
 import OptionBtn from "./optionBtn/OptionBtn";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import CustomizedDialogs from "../../../../../../CustomizedDialogs/CustomizedDialogs";
 import EditPostPopup from "./editPostPopup/EditPostPopup";
 import { useCreatePostValue } from "../../../../../../../contextAPI/CreatePostProvider";
@@ -38,9 +40,9 @@ const Post = (props) => {
         <img src={postImg} onError={e => e.target.src = ""} />
       </div>
       <div className="post-option">
-        <OptionBtn color="grey" Icon={ThumbUpOffAltIcon} title="Like" />
-        <OptionBtn color="grey" Icon={ChatBubbleOutlineIcon} title="Comment" />
-        <OptionBtn color="grey" Icon={ShareIcon} title="Share" />
+        <OptionBtn color="#777" Icon={ThumbUpOffAltIcon} title="Like" />
+        <OptionBtn color="#777" Icon={ChatBubbleOutlineIcon} title="Comment" />
+        <OptionBtn color="#777" Icon={ShareIcon} title="Share" />
       </div>
 
       {
@@ -62,7 +64,7 @@ const Post = (props) => {
               })
             }}
           >
-            <EditIcon fontSize="small" />
+            <EditOutlinedIcon fontSize="small" />
           </button>
           <button
             className="post-action"
@@ -80,7 +82,7 @@ const Post = (props) => {
               })
             }}
           >
-            <DeleteIcon fontSize="small" />
+            <DeleteOutlineOutlinedIcon fontSize="small" />
           </button>
         </div>
       }
