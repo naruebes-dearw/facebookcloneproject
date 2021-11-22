@@ -23,7 +23,9 @@ const GuestLoginBtn = () => {
     <>
       <Button
         onClick={(() => guestLogin())}
-        variant="outlined"
+        variant="contained"
+        // color="secondary"
+        style={{ backgroundColor: "grey" }}
         startIcon={<AccountCircleIcon />}
       >
         Login as guest

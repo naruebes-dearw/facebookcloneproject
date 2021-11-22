@@ -8,7 +8,7 @@ const FacebookLoginBtn = () => {
     <>
       <Button
         onClick={(() => oauthLogin(SERVER_LOGIN_FACEBOOK))}
-        variant="outlined"
+        variant="contained"
         startIcon={<FacebookRoundedIcon />}
       >
         Login with facebook

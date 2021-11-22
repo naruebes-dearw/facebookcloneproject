@@ -42,7 +42,6 @@ export default function ProfileSetting({ children }) {
   };
   const handleEdit = (e) => {
     e.preventDefault();
-    setAnchorEl(null);
     const newProfile = {
       userId,
       editFirstName,
@@ -50,18 +49,8 @@ export default function ProfileSetting({ children }) {
       editImgUrl
     }
     editProfile(newProfile, dispatch);
+    setOpenEditProfile(false);
   };
-  // const editProfilePopup = () => {
-  //   console.log("edit profile popup 1")
-  //   setOpenEditProfile(true)
-  //   // setAnchorEl(null);
-  // }
-
-  // const stopImmediatePropagation = (e) => {
-  //   e.stopPropagation();
-  //   e.preventDefault();
-  //   console.log("stop immediate propagation.");
-  // };
 
   const handleDelete = () => {
     deleteProfile(userId);

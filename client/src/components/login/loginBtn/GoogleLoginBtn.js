@@ -8,7 +8,8 @@ const GoogleLoginBtn = () => {
     <>
       <Button
         onClick={(() => oauthLogin(SERVER_LOGIN_GOOGLE))}
-        variant="outlined"
+        variant="contained"
+        color="error"
         startIcon={<GoogleIcon />}
       >
         Login with google
