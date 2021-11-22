@@ -1,5 +1,6 @@
 import ProfileSetting from "../home/header/headerRight/profileSetting/ProfileSetting";
 import "./Test.css";
+import TestMenu from "./testMenu/TestMenu";
 
 const Test = () => {
 
@@ -7,18 +8,14 @@ const Test = () => {
     <div className="test">
       Test page
 
-      <ProfileSetting>
+      <TestMenu />
+
+      {/* <ProfileSetting>
         Profile setting
-      </ProfileSetting>
+      </ProfileSetting> */}
 
     </div>
   );
 }
 
 export default Test;
-
-{/* <CreatePostProvider>
-  <CustomizedDialogs title="Create Post">
-    <CreatePostPopup />
-  </CustomizedDialogs>
-</CreatePostProvider> */}

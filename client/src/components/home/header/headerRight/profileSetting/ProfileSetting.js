@@ -50,8 +50,19 @@ export default function ProfileSetting({ children }) {
       editImgUrl
     }
     editProfile(newProfile, dispatch);
-    // window.location = "/";
   };
+  // const editProfilePopup = () => {
+  //   console.log("edit profile popup 1")
+  //   setOpenEditProfile(true)
+  //   // setAnchorEl(null);
+  // }
+
+  // const stopImmediatePropagation = (e) => {
+  //   e.stopPropagation();
+  //   e.preventDefault();
+  //   console.log("stop immediate propagation.");
+  // };
+
   const handleDelete = () => {
     deleteProfile(userId);
     setAnchorEl(null);
@@ -78,6 +89,8 @@ export default function ProfileSetting({ children }) {
       >
         {children}
       </div>
+
+
       <Menu
         id="basic-menu"
         anchorEl={anchorEl}
@@ -87,59 +100,71 @@ export default function ProfileSetting({ children }) {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={() => setOpenEditProfile(true)}>
+        <MenuItem
+          onClick={() => {
+            setAnchorEl(null);
+            setOpenEditProfile(true);
+          }}
+        >
           <EditOutlinedIcon fontSize="small" sx={{ mr: 1 }} />
           <p>Edit Profile</p>
         </MenuItem>
-        <CustomizedDialogs title="Edit Profile" useValue={useEditProfile}>
-          <form onSubmit={handleEdit} className="edit-profile">
-            <div className="img-wrapper">
-              {
-                editImgUrl && <img src={editImgUrl} /> ||
-                <PersonIcon fontSize="large" />
-              }
-            </div>
-            <TextField
-              className="text-field"
-              onChange={e => setEditImgUrl(e.target.value)}
-              value={editImgUrl}
-              label="Profile Image URL"
-              variant="standard"
-            />
-            <TextField
-              className="text-field"
-              onChange={e => setEditFirstName(e.target.value)}
-              value={editFirstName}
-              label="First Name"
-              variant="standard"
-              required
-            />
-            <TextField
-              className="text-field"
-              onChange={e => setEditLastName(e.target.value)}
-              value={editLastName}
-              label="Last Name"
-              variant="standard"
-              required
-            />
-            <input type="submit" value="Save" className="save-btn" />
-          </form>
-        </CustomizedDialogs>
 
-        <MenuItem onClick={() => setOpenDeleteProfile(true)}>
+        <MenuItem
+          onClick={() => {
+            setAnchorEl(null);
+            setOpenDeleteProfile(true);
+          }}
+        >
           <DeleteOutlineOutlinedIcon fontSize="small" sx={{ mr: 1 }} />
           <p>Delete Profile</p>
         </MenuItem>
-        <CustomizedDialogs title="Delete Profile" useValue={useDeleteProfile}>
-          <div className="delete-profile">
-            <p>Are you sure to delete you profile?</p>
-            <div className="btns">
-              <button onClick={handleCloseDelete} className="cancle-btn btn">Cancle</button>
-              <button onClick={handleDelete} className="confirm-btn btn">Delete</button>
-            </div>
-          </div>
-        </CustomizedDialogs>
       </Menu>
+
+      <CustomizedDialogs title="Edit Profile" useValue={useEditProfile}>
+        <form onSubmit={handleEdit} className="edit-profile">
+          <div className="img-wrapper">
+            {
+              editImgUrl && <img src={editImgUrl} /> ||
+              <PersonIcon fontSize="large" />
+            }
+          </div>
+          <TextField
+            className="text-field"
+            onChange={e => setEditImgUrl(e.target.value)}
+            value={editImgUrl}
+            label="Profile Image URL"
+            variant="standard"
+          />
+          <TextField
+            className="text-field"
+            onChange={e => setEditFirstName(e.target.value)}
+            value={editFirstName}
+            label="First Name"
+            variant="standard"
+            required
+          />
+          <TextField
+            className="text-field"
+            onChange={e => setEditLastName(e.target.value)}
+            value={editLastName}
+            label="Last Name"
+            variant="standard"
+            required
+          />
+          <input type="submit" value="Save" className="save-btn" />
+        </form>
+      </CustomizedDialogs>
+
+      <CustomizedDialogs title="Delete Profile" useValue={useDeleteProfile}>
+        <div className="delete-profile">
+          <p>Are you sure to delete you profile?</p>
+          <div className="btns">
+            <button onClick={handleCloseDelete} className="cancle-btn btn">Cancle</button>
+            <button onClick={handleDelete} className="confirm-btn btn">Delete</button>
+          </div>
+        </div>
+      </CustomizedDialogs>
     </div>
   );
 }
