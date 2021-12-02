@@ -1,3 +1,15 @@
 .feed {
+  width: 700px;
   padding: 20px 80px;
+}
+
+/* .post-creater {
+  display: none;
+} */
+
+@media screen and (max-width: 700px) {
+  .feed {
+    width: 100%;
+    padding: 0 20px;
+  }
 }

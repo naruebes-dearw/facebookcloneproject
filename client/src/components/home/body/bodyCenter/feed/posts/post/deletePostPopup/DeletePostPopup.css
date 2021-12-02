@@ -1,31 +1,43 @@
-.edit-post {
+.delete-post {
   width: 500px;
   display: flex;
   flex-direction: column;
   row-gap: 25px;
 }
 
-.edit-post .btns {
+.delete-post .btns {
   text-align: right;
 }
 
-.edit-post .btn {
+.delete-post .btn {
   font-weight: 600;
   color: #FFF;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
-  /* background-color: var(--color-primary); */
+  background-color: var(--color-primary);
   background-color: red;
 }
 
-.edit-post .btn:active {
+.delete-post .btn:active {
   transform: scale(0.99);
 }
 
-.edit-post .cancle-btn {
+.delete-post .cancle-btn {
   color: black;
-  /* color: var(--color-primary); */
+  color: var(--color-primary);
   background-color: transparent;
+}
+
+@media screen and (max-width: 600px) {
+  .delete-post {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .delete-post {
+    width: 250px;
+  }
 }

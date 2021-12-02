@@ -1,4 +1,5 @@
 .header-left {
+  flex: 1;
   display: flex;
   column-gap: 10px;
 }
@@ -33,4 +34,10 @@
 #search-input:focus + .search-label {
   opacity: 0;
   transform: translateX(-10px)
+}
+
+@media screen and (max-width: 700px) {
+  .search-container {
+    display: none;
+  }
 }

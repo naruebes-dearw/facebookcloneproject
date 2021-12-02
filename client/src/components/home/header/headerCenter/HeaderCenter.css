@@ -6,3 +6,9 @@
   column-gap: 5px;
   justify-content: space-evenly;
 }
+
+@media screen and (max-width: 800px) {
+  .header-center {
+    display: none;
+  }
+}

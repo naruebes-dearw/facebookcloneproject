@@ -12,3 +12,9 @@
 .option-btn:hover {
   background-color: var(--background-hover);
 }
+
+@media screen and (max-width: 500px) {
+  .option-btn p {
+    display: none;
+  }
+}

@@ -82,3 +82,15 @@
 .edit-post button:active {
   transform: scale(0.99);
 }
+
+@media screen and (max-width: 600px) {
+  .edit-post {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .edit-post {
+    width: 250px;
+  }
+}

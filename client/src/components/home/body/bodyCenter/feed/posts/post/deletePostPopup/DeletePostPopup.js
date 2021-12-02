@@ -29,7 +29,7 @@ const DeletePostPopup = () => {
   }
 
   return (
-    <div className="edit-post">
+    <div className="delete-post">
       <p>Are you sure to delete?</p>
 
       <div className="btns">

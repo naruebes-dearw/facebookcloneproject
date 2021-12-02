@@ -82,3 +82,15 @@
 .create-post button:active {
   transform: scale(0.99);
 }
+
+@media screen and (max-width: 600px) {
+  .create-post {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .create-post {
+    width: 250px;
+  }
+}

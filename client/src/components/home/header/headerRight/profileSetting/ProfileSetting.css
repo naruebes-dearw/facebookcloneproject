@@ -74,3 +74,19 @@
   /* color: var(--color-primary); */
   background-color: transparent;
 }
+
+@media screen and (max-width: 600px) {
+  .delete-profile {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .edit-profile {
+    width: 250px;
+  }
+
+  .delete-profile {
+    width: 250px;
+  }
+}

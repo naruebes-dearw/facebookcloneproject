@@ -1,5 +1,6 @@
 .body-center {
-  flex: 2.5;
+  /* flex: 0.5; */
   padding: 10px;
   position: relative;
+  margin: 0 auto;
 }

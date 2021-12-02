@@ -75,3 +75,9 @@
   color: var(--color-grey);
   text-transform: none;
 }
+
+@media screen and (max-width: 400px) {
+  .post-creater-top .modal-btn .input-placeholder {
+    font-size: 0.85rem;
+  }
+}
