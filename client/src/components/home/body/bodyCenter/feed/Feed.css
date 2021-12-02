@@ -13,3 +13,10 @@
     padding: 0 20px;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .feed {
+    width: 100%;
+    padding: 0;
+  }
+}
